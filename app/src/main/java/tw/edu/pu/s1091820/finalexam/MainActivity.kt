@@ -6,9 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import com.bumptech.glide.annotation.GlideModule
+import com.bumptech.glide.module.AppGlideModule
 import tw.edu.pu.s1091820.finalexam.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
+@GlideModule
+public final class MyAppGlideModule : AppGlideModule()
 
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +26,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)
+
+
+        GlideApp.with(this)
+            .load(R.drawable.me)
+            .circleCrop()
+            .override(800, 600)
+            .into(img)
+
 
         img1.setOnClickListener(object:View.OnClickListener {
             override fun onClick(p0:View?){
@@ -40,11 +52,9 @@ class MainActivity : AppCompatActivity() {
                             val canvas: Canvas = binding.mysv.holder.lockCanvas()
                             binding.mysv.drawSomething(canvas)
                             binding.mysv.holder.unlockCanvasAndPost(canvas)
-
                         }
                     }
                 }
-
             }
         })
     }
