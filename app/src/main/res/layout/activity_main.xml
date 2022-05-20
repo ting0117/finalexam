@@ -11,8 +11,8 @@
         android:id="@+id/mysv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="-44dp"
-        tools:layout_editor_absoluteY="-44dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/txv"
@@ -21,11 +21,19 @@
         android:layout_marginStart="24dp"
         android:text="射擊遊戲(作者:劉京婷)"
         android:textColor="#2196F3"
-        android:textColorHighlight="#E927B1FB"
-        android:textColorHint="#2196F3"
-        android:textColorLink="#03A9F4"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mysv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/start" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
